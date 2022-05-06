@@ -113,15 +113,17 @@ const Menu = ({ location: { pathname } }) => (
           });
         }
       });
+
       const newArr = sortBy(newMenu, 'index');
       const useCurrent = pathname
         .split('/')
         .filter((item) => {
           // Check if the path includes the pathPrefix (current version)
-          return (!!item && item !== ahaReactConfig.version)
+          return (!!item && item !== ahaReactConfig.version && item !== process.env.GATSBY_PATH_PREFIX);
         })
         .join('.')
       const [currentPath, setCurrentPath] = useState(useCurrent);
+
       const handleOnSelect = (e) => {
         const linkTo = e.replace(/\./g, '/');
         navigate(`/${linkTo}/`);
