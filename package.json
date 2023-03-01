@@ -1,0 +1,25 @@
+{
+  "name": "aha-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.58.3",
+    "vitepress": "1.0.0-alpha.49",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "flexsearch": "^0.7.31",
+    "markdown-it": "^13.0.1",
+    "vite": "^4.1.4",
+    "vitepress-plugin-search": "1.0.4-alpha.19"
+  }
+}
