@@ -7,15 +7,36 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14]
     steps:
       - name: Checkout
-        uses: actions/checkout@master
-
-      - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: "https://registry.npmjs.org"
+      - name: Use cached node_modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ matrix.node-version }}
+          restore-keys: nodeModules-
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npx pnpm install
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: ahaui/docs
-          TARGET_BRANCH: gh-pages
-          BUILD_SCRIPT: npx pnpm install && npx pnpm build
-          BUILD_DIR: docs/.vuepress/dist
+          CI: true
+      - name: Build
+        run: npx pnpm build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: ahaui/v2
+          publish_dir: docs/.vitepress/dist
+          cname: aha.tinh.dev

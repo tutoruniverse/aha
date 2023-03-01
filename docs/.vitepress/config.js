@@ -25,7 +25,7 @@ export default {
             copyright: 'Copyright © 2019-present <a href="https://www.got-it.co/" target="_blank">Got It, Inc.</a>'
         },
         editLink: {
-            pattern: 'https://github.com/ahaui/docs/docs/:path',
+            pattern: 'https://github.com/ahaui/docs/tree/v2/main/docs/:path',
         },
         nav: [
             { text: 'Design', link: '/design/overview'},
