@@ -39,7 +39,7 @@ export default {
             '/css/': cssSidebar(),
         }
     },
-    base: '/v2x/',
+    base: process.env.NODE_ENV === 'production' ? '/v2x/' : '/',
 }
 
 function designSidebar() {

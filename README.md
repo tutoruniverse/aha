@@ -12,15 +12,15 @@
 
 ## Quick start
 
-Aha's documentation is built with Gatsby and publicly hosted at https://ahaui.github.io/. The docs may also be run locally.
+Aha's documentation is built with VitePress and publicly hosted at https://ahaui.github.io/. The docs may also be run locally.
 
 ### Running documentation locally
 
 0. Use `pnpm` to install the Node.js dependencies
-1. Clone this repository: `git clone git@github.com:gotitinc/aha-docs.git`
-4. `npx pnpm install`
-5. `pnpm dev`
-6. Open `http://localhost:8000/` in your browser.
+1. Clone this repository: `git clone git@github.com:gotitinc/aha.git`
+2. `npx pnpm install`
+3. `pnpm start`
+4. Open `http://localhost:3000/` in your browser.
 
 ## Copyright and license
 
