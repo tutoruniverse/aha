@@ -37,6 +37,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: ahaui/v2
+          external_repository: ahaui-insiders/ahaui-insiders.github.io
           publish_dir: docs/.vitepress/dist
-          cname: aha.tinh.dev
+          destination_dir: v2x
