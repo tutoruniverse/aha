@@ -1,5 +1,6 @@
 export default {
     title: 'Aha Design System',
+    titleTemplate: '%s | Aha Design System',
     description: 'An ever-evolving system that enables us to build higher quality products more efficiently',
     themeConfig: {
         siteTitle: 'Aha Design System',
@@ -37,7 +38,8 @@ export default {
             '/components/': componentsSidebar(),
             '/css/': cssSidebar(),
         }
-    }
+    },
+    base: '/v2x/',
 }
 
 function designSidebar() {
