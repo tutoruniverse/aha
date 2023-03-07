@@ -1,11 +1,11 @@
 export default {
     title: 'Aha Design System',
-    titleTemplate: '%s | Aha Design System',
+    titleTemplate: ':title | Aha Design System',
     description: 'An ever-evolving system that enables us to build higher quality products more efficiently',
+    cleanUrls: true,
+    lastUpdated: true,
     themeConfig: {
         siteTitle: 'Aha Design System',
-        lastUpdated: true,
-        cleanUrls: true,
         markdown: {
             headers: {
               level: [0, 0]

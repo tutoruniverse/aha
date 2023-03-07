@@ -2,7 +2,7 @@
 layout: home
 
 title: Aha Design System
-titleTemplate: Vite & Vue Powered Static Site Generator
+titleTemplate: An ever-evolving system that enables us to build higher quality products more efficiently
 
 hero:
   name: Aha Design System
