@@ -105,3 +105,6 @@ dist
 
 # VitePress 
 docs/.vitepress/cache/
+
+# MacOS Desktop Services Store
+.DS_Store
