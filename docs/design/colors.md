@@ -1,3 +1,8 @@
+<script setup>
+import { blockColor } from '../data/color.ts'
+const { primary, secondary, neutrals, extended } = blockColor
+</script>
+
 # Colors
 
 Color palette listings and general guide to use colors in product design.
@@ -6,47 +11,70 @@ Color palette listings and general guide to use colors in product design.
 
 ### Primary colors
 
-<div class="BoxColor" style="--bg: #375DE7" data-color="#375DE7" data-color-name="Blue300"></div>
-<div class="BoxColor" style="--bg: #172B4D" data-color="#172B4D" data-color-name="Neutral800"></div>
-<div class="BoxColor" style="--bg: #FFFFFF; --text: #000;" data-color="#FFFFFF" data-color-name="White"></div>
-<div class="BoxColor" style="--bg: #ED6200" data-color="#ED6200" data-color-name="Orange300"></div>
+<div class="Grid Grid--smallGutter u-marginTopSmall">
+    <div class="u-sizeFull lg:u-size1of2 u-marginBottomMedium" v-for="item in primary">
+        <div
+            class="u-flex u-justifyContentBetween u-text100 u-paddingHorizontalExtraSmall u-paddingBottomTiny u-paddingTopMedium"
+            :class="item.classBackground, item.classText || 'u-textWhite'"
+            :style="'background-color:'+item.color">
+            <span>{{item.title}}</span>
+            <span>{{item.color}}</span>
+        </div>
+    </div>
+</div>
 
 Our primary palette is comprised of blue, dark neutral, white, and orange. These colors are present across most touch points from marketing to product.
 
-- Blue Blue300 - `#375DE7` is used for primary actions and buttons, links, for indicating progress, and representing authentication.
-- Dark neutral Neutral800 - `#172B4D` is used primarily for body text and headings.
-- White White - `#FFFFFF` is used for page backgrounds and anything that is white.
-- Orange Orange300 - `#ED6200` is used like accent color for ask flow and payment flow.
+<ul v-for="item in primary">
+    <li>{{item.title}} {{item.name}} - <code>{{item.color}}</code> {{item.description}}</li>
+</ul>
 
 ### Secondary colors
 
-<div class="BoxColor" style="--bg: #D0021B" data-color="#D0021B" data-color-name="Red300"></div>
-<div class="BoxColor" style="--bg: #FFAB00; --text: #000" data-color="#FFAB00" data-color-name="Yellow300"></div>
-<div class="BoxColor" style="--bg: #22A861" data-color="#22A861" data-color-name="Green300"></div>
+<div class="Grid Grid--smallGutter u-marginTopSmall">
+    <div class="u-sizeFull lg:u-size1of2 u-marginBottomMedium" v-for="item in secondary">
+        <div
+            class="u-flex u-justifyContentBetween u-text100 u-paddingHorizontalExtraSmall u-paddingBottomTiny u-paddingTopMedium"
+            :class="item.classText || 'u-textWhite'"
+            :style="'background-color:'+item.color">
+            <span>{{item.title}}</span>
+            <span>{{item.color}}</span>
+        </div>
+    </div>
+</div>
 
-<style lang="scss">
-    .BoxColor {
-        display: inline-flex;
-        width: calc(var(--width, 50%) - 8px);
-        align-items: flex-end;
-        justify-content: space-between;
-        color: #fff;
-        padding: 8px 8px 0 8px;
-        height: 44px;
-        margin-top: 8px;
-        margin-right: 4px;
-        margin-left: 4px;
-        background-color: var(--bg);
-        &::after,
-        &::before {
-            font-size: 10px;
-            color: var(--text, #fff);
-        }
-        &::after {
-            content: attr(data-color);
-        }
-        &::before {
-            content: attr(data-color-name);
-        }
-    }
-</style>
+<ul v-for="item in secondary">
+    <li>{{item.title}} {{item.name}} - <code>{{item.color}}</code> {{item.description}}</li>
+</ul>
+
+<div className="Grid Grid--smallGutter u-marginBottomExtraSmall">
+    <div className="u-sizeFull lg:u-size1of2 u-marginBottomMedium"  v-for="neutral in neutrals">
+      <h6 className="u-marginBottomExtraSmall">{{neutral.title}}</h6>
+        <div
+            v-for="item in neutral.list"
+            class="u-flex u-justifyContentBetween u-text100 u-paddingHorizontalExtraSmall u-paddingVerticalExtraSmall u-marginBottomTiny"
+            :class="item.classText || 'u-textWhite'"
+            :style="'background-color:'+item.color">
+            <span>{{item.title}}</span>
+            <span>{{item.color}}</span>
+        </div>
+    </div>
+</div>
+
+### Extended palette
+
+Extended palette is all the useable tints and shades of each color in the palette. It can be used for background, illustrations and components in product.
+
+<div className="Grid Grid--smallGutter u-marginBottomExtraSmall">
+    <div className="u-sizeFull lg:u-size1of2 u-marginBottomMedium"  v-for="palette in extended">
+      <h6 className="u-marginBottomExtraSmall">{{palette.title}}</h6>
+        <div
+            v-for="item in palette.list"
+            class="u-flex u-justifyContentBetween u-text100 u-paddingHorizontalExtraSmall u-paddingVerticalExtraSmall u-marginBottomTiny"
+            :class="item.classText || 'u-textWhite'"
+            :style="'background-color:'+item.color">
+            <span>{{item.title}}</span>
+            <span>{{item.color}}</span>
+        </div>
+    </div>
+</div>
