@@ -17,6 +17,7 @@
     "vue": "^3.2.47"
   },
   "dependencies": {
+    "@ahaui/css": "^2.1.6",
     "flexsearch": "^0.7.31",
     "markdown-it": "^13.0.1",
     "vite": "^4.1.4",

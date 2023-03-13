@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ahaui/css': ^2.1.6
   flexsearch: ^0.7.31
   markdown-it: ^13.0.1
   sass: ^1.58.3
@@ -10,6 +11,7 @@ specifiers:
   vue: ^3.2.47
 
 dependencies:
+  '@ahaui/css': 2.1.6
   flexsearch: 0.7.31
   markdown-it: 13.0.1
   vite: 4.1.4_sass@1.58.3
@@ -21,6 +23,10 @@ devDependencies:
   vue: 3.2.47
 
 packages:
+
+  /@ahaui/css/2.1.6:
+    resolution: {integrity: sha512-Qfu8wZNSjuz/ak8iDBJCNQMGYRDpGoR08i+1gX/4hKN+tLvEoHi/qDHFj30TxSiLgrvYMkBePjxOWb2mA76d6A==}
+    dev: false
 
   /@algolia/autocomplete-core/1.7.4:
     resolution: {integrity: sha512-daoLpQ3ps/VTMRZDEBfU8ixXd+amZcNJ4QSP3IERGyzqnL5Ch8uSRFt/4G8pUvW9c3o6GA4vtVv4I4lmnkdXyg==}
